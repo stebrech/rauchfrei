@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ title }}</title>
+		<meta name="description" content="{{ description }}">
+		<meta name="generator" content="{{ eleventy.generator }}">
+		<link rel="stylesheet" href="/assets/css/reset.css"> {# https://piccalil.li/blog/a-more-modern-css-reset/ #}
+		<link rel="stylesheet" href="/assets/css/mvp.css">
+		<link rel="stylesheet" href="/assets/css/custom.css">
+
+	</head>
+	<body>
+		<header>
+			<div class="logo">{% include "includes/smoke-free.svg" %}</div>
+			<h1>{{ title }} <span class="label">beta</span></h1>
+		</header>
+
+		<main>
+			{# <!-- Share Overlay -->
+			<div id="share-overlay" class="overlay">
+				<div class="overlay-content">
+					<span class="close-btn" id="close-share">&times;</span>
+					<h2>Share</h2>
+					<!-- Share dialog content goes here -->
+				</div>
+			</div> #}
+
+			<article>
+				<nav class="nav-top">
+					<a href="#" id="settings-link"><strong><span class="btn-icon">{% include "includes/user.svg" %}</span> Einstellungen</strong></a>
+				</nav>
+				<section id="settings">
+					{% include "includes/settings.njk" %}
+				</section>
+				<section id="overview">
+					{% include "includes/overview.njk" %}
+				</section>
+				<section id="content-wrapper">
+					{{ content | safe }}
+				</section>
+				{# <nav class="nav-bottom">
+					<a href="#" id="share-link"><strong><span class="btn-icon">{% include "includes/share.svg" %}</span> Teile deinen Erfolg</strong></a>
+				</nav> #}
+			</article>
+		</main>
+
+		<footer>
+		</footer>
+
+		<script type="module" src="assets/js/currency.js"></script>
+		<script type="module" src="assets/js/calculate.js"></script>
+	</body>
+</html>

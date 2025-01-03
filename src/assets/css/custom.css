@@ -1,0 +1,268 @@
+/* Override mvp.css variables */
+
+:root {
+	--active-brightness: 0.85;
+	--border-radius: 3px;
+	--box-shadow: 0rem 0rem 2rem rgba(0, 4, 12, 0.9);
+	--color-accent: rgb(51, 154, 240);
+	--color-bg: rgb(14, 18, 26);
+	--color-bg-secondary: rgb(4, 8, 16);
+	--color-link: rgb(51, 154, 240);
+	--color-secondary: rgb(252, 196, 25);
+	--color-secondary-accent: rgba(252, 196, 25, 0.1);
+	--color-shadow: #f4f4f4;
+	--color-table: var(--color-accent);
+	--color-text: rgb(241, 243, 245);
+	--color-text-secondary: var(--color-text);
+	--color-scrollbar: #cacae8;
+	--font-family: system-ui, sans-serif;
+	--hover-brightness: 1.2;
+	--justify-important: left;
+	--justify-normal: left;
+	--line-height: 1.5;
+	--width-card: 40rem;
+	--width-card-medium: 40rem;
+	--width-card-wide: 40rem;
+	--width-content: 40rem;
+}
+
+/* Layout */
+
+html {
+	font-size: 1rem;
+}
+
+body {
+	font-size: 1em;
+	min-height: 100vh;
+}
+
+body {
+	background: var(--color-bg)
+		radial-gradient(
+			circle at center center,
+			rgba(255, 255, 255, 0.1) 0%,
+			transparent 70%
+		);
+}
+
+footer,
+header {
+	padding: 3rem 1rem 0;
+}
+
+main {
+	padding: 1rem 1rem 0;
+	position: relative;
+}
+
+section {
+	margin-top: 5rem;
+	justify-content: center;
+}
+
+#settings {
+	margin-top: 1rem;
+}
+
+.nav-top,
+.nav-bottom {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 0;
+}
+
+h1 {
+	text-align: center;
+}
+
+h1,
+h2 {
+	margin-top: 0;
+}
+
+h3 {
+	margin-bottom: 1rem;
+}
+
+p,
+aside,
+section aside,
+h3,
+button {
+	margin: 2rem 0 0 0;
+}
+
+/* Table */
+
+table {
+	background-color: var(--color-bg-secondary);
+	border: 1px solid var(--color-accent);
+	border-radius: var(--border-radius);
+	border-collapse: collapse;
+	box-shadow: var(--box-shadow);
+	padding: 1rem;
+	white-space: wrap;
+}
+
+table tr,
+table tr:nth-child(2n) {
+	background-color: transparent;
+}
+
+table tr:not(:last-child) {
+	border-bottom: 1px solid var(--color-accent);
+}
+
+table tr:not(:first-child) th,
+table tr:not(:first-child) td {
+	padding-top: 1rem;
+}
+
+table tr:not(:last-child) th,
+table tr:not(:last-child) td {
+	padding-bottom: 1rem;
+}
+
+.logo {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 0.5rem;
+}
+
+.logo svg {
+	background-color: var(--color-accent);
+	border-radius: 50%;
+	box-shadow: var(--box-shadow);
+	fill: white;
+	height: 4rem;
+	width: 4rem;
+	padding: 0.75rem;
+}
+
+svg {
+	fill: var(--color-accent);
+	vertical-align: middle;
+}
+
+.label {
+	background-color: var(--color-secondary);
+	border-radius: var(--border-radius);
+	color: var(--color-bg);
+	font-size: 0.5em;
+	vertical-align: text-top;
+	padding: 0 0.25em;
+}
+
+.btn-icon svg {
+	fill: var(--color-bg);
+	height: 1.5em;
+	margin-top: -0.25em;
+	width: 1.5em;
+}
+
+article aside,
+section aside,
+aside {
+	border-left: 4px solid var(--color-secondary);
+	padding: 0.5rem 0.5rem 0.5rem 1rem;
+	width: 100%;
+}
+
+/* Overlay */
+/* 
+.overlay {
+	align-items: center;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+}
+
+.overlay-content {
+	background-color: var(--color-bg-secondary);
+	border-radius: 1rem;
+	box-shadow: var(--box-shadow);
+	position: relative;
+	margin: 1rem auto;
+	padding: 2rem;
+	width: 40rem;
+	max-width: 100%;
+}
+
+.close-btn {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	font-size: 24px;
+	cursor: pointer;
+} */
+
+/* Form */
+
+.overlay-content article {
+	display: grid;
+	gap: 1rem;
+}
+
+form {
+	background-color: transparent;
+	border-color: transparent;
+	box-shadow: none;
+	min-width: 100%;
+	padding: 0;
+}
+
+.form-group {
+	align-items: end;
+	display: grid;
+	gap: 1rem;
+	max-width: calc(100% - 4rem);
+}
+
+@media (min-width: 40rem) {
+	.form-group.two-cols {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.form-group.four-cols {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+	width: auto;
+}
+
+.label-input-group {
+	display: flex;
+	flex-direction: column;
+	width: calc(100vw - 2rem);
+}
+
+@media screen and (min-width: 40rem) {
+	.two-cols .label-input-group {
+		max-width: calc((var(--width-content) - 3rem) / 2);
+	}
+
+	.four-cols .label-input-group {
+		max-width: calc((var(--width-content) - 5rem) / 4);
+	}
+}
+
+input {
+	margin-top: 0.5rem;
+	margin-bottom: 0;
+}
+
+a b,
+a strong,
+button,
+input[type="submit"] {
+	cursor: pointer;
+	padding: 1rem 1.25rem;
+}

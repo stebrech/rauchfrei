@@ -1,0 +1,22 @@
+{
+	"name": "rauchfrei",
+	"version": "1.0.0",
+	"description": "A web app to track the advantages of quitting to smoke.",
+	"main": "index.js",
+	"scripts": {
+		"dev": "npx @11ty/eleventy --serve",
+		"build": "npx @11ty/eleventy"
+	},
+	"type": "module",
+	"keywords": [
+		"11ty",
+		"eleventy",
+		"web app",
+		"quit smoking"
+	],
+	"author": "Stefan Brechbühl",
+	"license": "MIT",
+	"dependencies": {
+		"@11ty/eleventy": "github:11ty/eleventy"
+	}
+}
