@@ -3,8 +3,37 @@
 <aside>Deine persönlichen Einstellungen werden <abbr title="Local Storage">lokal in deinem Browser</abbr> gespeichert.</aside>
 
 <form action="/" method="post" id="form-settings">
-	<h3>🚬 Konsum</h3>
-	<div class="form-group two-cols">
+
+<h3>📍 Standort</h3>
+		<div class="form-group two-cols">
+			<div class="label-input-group">
+				<label for="country">Land</label>
+				<select name="country" id="country">
+					<option value="">Bitte wählen</option>
+					{% for country in countries %}
+						<option value="{{ country.iso2 }}">{{ country.name }}</option>
+					{% endfor %} 
+				</select>
+			</div>
+		</div>
+		<div class="form-group three-cols">
+			<div class="label-input-group">
+				<label for="currency">Währung</label>
+				<input type="text" name="currency" id="currency" />
+			</div>
+			<div class="label-input-group">
+				<label for="separator">Tausender-Trennzeichen</label>
+				<input type="text" name="separator" id="separator" />
+			</div>
+			<div class="label-input-group">
+				<label for="decimal">Dezimalzeichen</label>
+				<input type="text" name="decimal" id="decimal"/>
+			</div>
+		</div>
+	</div>
+
+	<h3>🚬 Konsum und Kosten</h3>
+	<div class="form-group three-cols">
 		<div class="label-input-group">
 			<label for="start-date">Wann hast du die letzte angezündet?</label>
 			<input type="date" name="start-date" id="start-date" />
@@ -13,26 +42,12 @@
 			<label for="ammount-smoked">Durchschnittlicher Konsum pro Tag</label>
 			<input type="number" name="ammount-smoked" id="ammount-smoked" />
 		</div>
-	</div>
-	<h3>💰 Kostenberechnung</h3>
-	<div class="form-group four-cols">
 		<div class="label-input-group">
 			<label for="price-per-piece">Preis pro Stk.</label>
 			<input type="number" name="price-per-piece" id="price-per-piece" step="0.01" />
 		</div>
-		<div class="label-input-group">
-			<label for="currency">Währung</label>
-			<input type="text" name="currency" id="currency" />
-		</div>
-		<div class="label-input-group">
-			<label for="separator">Tausender-Trennzeichen</label>
-			<input type="text" name="separator" id="separator" maxlength="1" />
-		</div>
-		<div class="label-input-group">
-			<label for="decimal">Dezimalzeichen</label>
-			<input type="text" name="decimal" id="decimal" maxlength="1"/>
-		</div>
 	</div>
+	
 	<button id="submit-settings" type="submit">Sichern</button>
 </form>
 

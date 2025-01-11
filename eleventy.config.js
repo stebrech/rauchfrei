@@ -1,5 +1,10 @@
 export default async function (eleventyConfig) {
-	eleventyConfig.addPassthroughCopy("src/assets");
+	eleventyConfig.addPassthroughCopy({
+		"src/assets/js": "/js",
+		"src/assets/css": "/css",
+		"src/assets/favicon": "/",
+		"src/data": "/data",
+	});
 	eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg,css,js}");
 }
 

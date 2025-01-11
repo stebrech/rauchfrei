@@ -6,9 +6,16 @@
 		<title>{{ title }}</title>
 		<meta name="description" content="{{ description }}">
 		<meta name="generator" content="{{ eleventy.generator }}">
-		<link rel="stylesheet" href="/assets/css/reset.css"> {# https://piccalil.li/blog/a-more-modern-css-reset/ #}
-		<link rel="stylesheet" href="/assets/css/mvp.css">
-		<link rel="stylesheet" href="/assets/css/custom.css">
+		<link rel="stylesheet" href="css/reset.css"> {# https://piccalil.li/blog/a-more-modern-css-reset/ #}
+		<link rel="stylesheet" href="css/mvp.css">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+		<meta name="apple-mobile-web-app-title" content="Rauchfrei" />
+		<link rel="manifest" href="site.webmanifest" />
 
 	</head>
 	<body>
@@ -28,9 +35,11 @@
 			</div> #}
 
 			<article>
-				<nav class="nav-top">
-					<a href="#" id="settings-link"><strong><span class="btn-icon">{% include "includes/user.svg" %}</span> Einstellungen</strong></a>
-				</nav>
+				<div class="article-top">
+					{# <a href="#" id="settings-link"><strong><span class="btn-icon">{% include "includes/user.svg" %}</span> Einstellungen</strong></a> #}
+					<button id="settings-btn" aria-expanded="true"><span class="btn-icon">{% include "includes/user.svg" %}</span> Einstellungen</button>
+				</div>
+
 				<section id="settings">
 					{% include "includes/settings.njk" %}
 				</section>
@@ -47,9 +56,14 @@
 		</main>
 
 		<footer>
+			<small>
+				&copy; {{ helpers.currentYear() }} <a href="https://stebre.ch">stebre.ch</a> <span class"dot">&middot;</span>
+				realisiert mit <a href="https://www.11ty.dev/">11ty</a> und 
+				<a href="https://www.netlify.com/">Netlify</a>
+			</small>
 		</footer>
 
-		<script type="module" src="assets/js/currency.js"></script>
-		<script type="module" src="assets/js/calculate.js"></script>
+		<script type="module" src="js/currency.js"></script>
+		<script type="module" src="js/calculate.js"></script>
 	</body>
 </html>
