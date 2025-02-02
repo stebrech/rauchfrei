@@ -26,7 +26,18 @@
 
 		<main>
 			<article>
-				{# <nav class="nav-top"></nav> #}
+				<nav class="nav-top">
+					<span class="lang-icon">{% include "includes/lang.svg" %}</span> {{ i18n.language.switch[page.lang] }} 
+					{% if page.lang == "en" %}<a href="/" hreflang="de">DE</a>{% endif %}
+					{% if page.lang == "de" %}<a href="/en" hreflang="en">EN</a>{% endif %}
+					
+					
+					{# TODO: This is not working 
+					{% for link in page.url | locale_links %}
+					{%- if not loop.first %},{% endif %}
+					<a href="{{link.url}}" lang="{{link.lang}}" hreflang="{{link.lang}}">{{link.label}}</a>
+					{% endfor %} #}
+				</nav>
 
 				<section id="settings">
 					{% include "includes/settings.njk" %}

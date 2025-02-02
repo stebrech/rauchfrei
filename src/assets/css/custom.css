@@ -89,6 +89,11 @@ section#content-wrapper {
   margin: 0;
 }
 
+.nav-top a {
+  font-weight: bold;
+  margin-left: 0.25em;
+}
+
 h1 {
   text-align: center;
 }
@@ -185,6 +190,15 @@ svg {
   fill: var(--color-bg);
   height: 1.5em;
   margin-top: -0.25em;
+  width: 1.5em;
+}
+
+.lang-icon {
+  margin-right: 0.25em;
+}
+
+.lang-icon svg {
+  height: 1.5em;
   width: 1.5em;
 }
 

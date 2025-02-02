@@ -7,6 +7,12 @@
     "de": "Webapp um zu tracken wie lange du schon rauchfrei bist und wie viel Geld du dadurch sparst.",
     "en": "Web app to track how long you have been smoke-free and how much money you save."
   },
+  "language": {
+    "switch": {
+      "de": "Sprache wechseln: ",
+      "en": "Switch language: "
+    }
+  },
   "settings": {
     "button": {
       "de": "Einstellungen",
@@ -92,8 +98,8 @@
         "en": "Piggy bank symbol"
       },
       "text": {
-      "de": "seit dem <span id='savings-date'></span> gespart",
-      "en": "saved since <span id='savings-date'></span>"
+        "de": "seit dem <span id='savings-date'></span> gespart",
+        "en": "saved since <span id='savings-date'></span>"
       }
     },
     "level": {
@@ -102,7 +108,7 @@
         "en": "Heart symbol"
       },
       "text": {
-      "de": "Gesundheitslevel",
+        "de": "Gesundheitslevel",
         "en": "Health level"
       },
       "link": {
