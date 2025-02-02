@@ -2,7 +2,7 @@
 const form = document.getElementById("form-settings");
 let startDate,
   startDateMs,
-  ammountSmoked,
+  amountSmoked,
   pricePerPiece,
   today,
   todayMs,
@@ -13,7 +13,7 @@ let startDate,
 function getSettings() {
   startDate = document.getElementById("start-date");
   startDateMs = new Date(startDate.value).getTime();
-  ammountSmoked = document.getElementById("ammount-smoked").value;
+  amountSmoked = document.getElementById("amount-smoked").value;
   pricePerPiece = document.getElementById("price-per-piece").value;
   today = new Date();
   todayMs = new Date().getTime();
@@ -43,16 +43,19 @@ document
 const settingsBtn = document.getElementById("settings-btn");
 const settings = document.getElementById("settings");
 const overview = document.getElementById("overview");
+const contentWrapper = document.getElementById("content-wrapper");
 
 settingsBtn.addEventListener("click", () => {
   if (settings.style.display === "block") {
     settings.style.display = "none";
     settingsBtn.setAttribute("aria-expanded", "false");
-    overview.style.display = "block";
+    overview.style.display = "flex";
+    contentWrapper.style.display = "flex";
   } else {
     settings.style.display = "block";
     settingsBtn.setAttribute("aria-expanded", "true");
     overview.style.display = "none";
+    contentWrapper.style.display = "none";
   }
 });
 
@@ -61,10 +64,11 @@ if (settingsSaved !== "") {
   document.getElementById("settings").style.display = "none";
   document.getElementById("start-date").value =
     localStorage.getItem("start-date");
-  document.getElementById("ammount-smoked").value =
-    localStorage.getItem("ammount-smoked");
+  document.getElementById("amount-smoked").value =
+    localStorage.getItem("amount-smoked");
   document.getElementById("price-per-piece").value =
     localStorage.getItem("price-per-piece");
+  document.getElementById("country").value = localStorage.getItem("country");
   document.getElementById("separator").value =
     localStorage.getItem("separator");
   document.getElementById("decimal").value = localStorage.getItem("decimal");
@@ -81,7 +85,7 @@ if (streak != 0) {
   document.querySelector("#streak").textContent = streak;
 }
 if (credits != 0) {
-  document.querySelector("#credits").textContent = credits;
+  document.querySelector("#savings-amount").textContent = credits;
 }
 
 // Update the values on form submit
@@ -91,15 +95,17 @@ form.addEventListener("submit", (event) => {
   const data = new FormData(form);
 
   localStorage.setItem("settingsSaved", today);
-  localStorage.setItem("start-date", data.get("start-date"));
-  localStorage.setItem("ammount-smoked", data.get("ammount-smoked"));
-  localStorage.setItem("price-per-piece", data.get("price-per-piece"));
+  localStorage.setItem("country", data.get("country"));
   localStorage.setItem("separator", data.get("separator"));
   localStorage.setItem("decimal", data.get("decimal"));
   localStorage.setItem("currency", data.get("currency"));
+  localStorage.setItem("start-date", data.get("start-date"));
+  localStorage.setItem("amount-smoked", data.get("amount-smoked"));
+  localStorage.setItem("price-per-piece", data.get("price-per-piece"));
 
   calculateStreak();
   calculateCredits();
+  calculateLevel();
 
   document.getElementById("overview").style.display = "flex";
 });
@@ -162,31 +168,11 @@ function calculateStreak() {
   streakMonths -= streakYears * 12;
   streakDays -= streakYears * 365 + streakMonths * 30;
 
-  // Set streak text
-  let streakText = `${streak} Tag${streak !== 1 ? "e" : ""}`;
-  const parts = [];
-
-  if (streakYears > 0) {
-    parts.push(`${streakYears} Jahr${streakYears !== 1 ? "e" : ""}`);
-  }
-  if (streakMonths > 0) {
-    parts.push(`${streakMonths} Monat${streakMonths !== 1 ? "e" : ""}`);
-  }
-  if (streakDays > 0 && (streakMonths > 0 || streakYears > 0)) {
-    parts.push(`${streakDays} Tag${streakDays !== 1 ? "e" : ""}`);
-  }
-  if (parts.length > 0) {
-    streakText += ` (${parts.join(", ")})`;
-  }
-
   localStorage.setItem("streak", streak);
   localStorage.setItem("streakDays", streakDays);
   localStorage.setItem("streakMonths", streakMonths);
   localStorage.setItem("streakYears", streakYears);
-  localStorage.setItem("streakText", streakText);
-  document.getElementById("streak").innerHTML = `<strong>${localStorage.getItem(
-    "streakText"
-  )}</strong><br>Streak (Serie in Tagen)`;
+  document.getElementById("streak").innerText = localStorage.getItem("streak");
 }
 
 // Function to calculate the credits
@@ -195,7 +181,7 @@ function calculateCredits() {
   getSettings();
 
   // calculate credits with currency.js
-  credits = currency(streak * ammountSmoked * pricePerPiece, {
+  credits = currency(streak * amountSmoked * pricePerPiece, {
     separator: separator,
     decimal: decimal,
     symbol: currencyIso + " ",
@@ -210,13 +196,54 @@ function calculateCredits() {
     day: "numeric",
   });
 
-  document.getElementById(
-    "credits"
-  ).innerHTML = `<strong>${localStorage.getItem(
-    "credits"
-  )}</strong><br>seit dem ${formattedDate} gespart`;
+  document.getElementById("savings-amount").innerText =
+    localStorage.getItem("credits");
+  document.getElementById("savings-date").innerText = formattedDate;
 }
 
-// Run the function on page load
+export function calculateLevel() {
+  // Get the level based on streak
+  let level = 0;
+  if (streak >= 1) {
+    level = 2;
+    document.getElementById("level1").classList.add("achieved");
+    document.getElementById("level2").classList.add("achieved");
+  }
+  if (streak >= 14) {
+    level = 3;
+    document.getElementById("level3").classList.add("achieved");
+  }
+  if (streak >= 30) {
+    level = 4;
+    document.getElementById("level4").classList.add("achieved");
+  }
+  if (streak >= 365) {
+    level = 5;
+    document.getElementById("level5").classList.add("achieved");
+  }
+  if (streak >= 730) {
+    level = 6;
+    document.getElementById("level6").classList.add("achieved");
+  }
+  if (streak >= 1826) {
+    level = 7;
+    document.getElementById("level7").classList.add("achieved");
+  }
+  if (streak >= 3652) {
+    level = 8;
+    document.getElementById("level8").classList.add("achieved");
+  }
+  if (streak >= 5479) {
+    level = 9;
+    document.getElementById("level9").classList.add("achieved");
+  }
+
+  localStorage.setItem("level", level);
+  document.getElementById("level").innerText = localStorage.getItem("level");
+  return level;
+}
+
+// Run the function on page loadformat
 calculateStreak();
 calculateCredits();
+calculateLevel();

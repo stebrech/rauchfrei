@@ -1,0 +1,104 @@
+{
+  "title": {
+    "de": "Rauchfrei Tracker",
+    "en": "Smoke Free Tracker"
+  },
+  "description": {
+    "de": "Webapp um zu tracken wie lange du schon rauchfrei bist und wie viel Geld du dadurch sparst.",
+    "en": "Web app to track how long you have been smoke-free and how much money you save."
+  },
+  "settings": {
+    "button": {
+      "de": "Einstellungen",
+      "en": "Settings"
+    },
+    "title": {
+      "de": "Meine Einstellungen",
+      "en": "My settings"
+    },
+    "note": {
+      "de": "Deine persönlichen Einstellungen werden <abbr title='Local Storage'>lokal in deinem Browser</abbr> gespeichert. Löscht du deine Browserdaten oder wechselt dein Gerät oder Browser, müssen die Einstellungen neu gesetzt werden.",
+      "en": "Your personal settings are stored <abbr title='Local Storage'>locally in your browser</abbr>. If you delete your browser data or switch your device or browser, the settings need to be reset."
+    },
+    "sections": {
+      "location": {
+        "subtitle": {
+          "de": "Standort",
+          "en": "Location"
+        },
+        "country": {
+          "de": "Land",
+          "en": "Country"
+        },
+        "choose": {
+          "de": "Bitte wählen",
+          "en": "Please choose"
+        },
+        "currency": {
+          "de": "Währung",
+          "en": "Currency"
+        },
+        "separator": {
+          "de": "Tausender-Trennzeichen",
+          "en": "Thousands separator"
+        },
+        "decimal": {
+          "de": "Dezimalzeichen",
+          "en": "Decimal point"
+        }
+      },
+      "consumption": {
+        "subtitle": {
+          "de": "Konsum und Kosten",
+          "en": "Consumption and costs"
+        },
+        "start": {
+          "de": "Wann hast du die letzte angezündet?",
+          "en": "When did you light the last one?"
+        },
+        "amount": {
+          "de": "Durchschnittlicher Konsum pro Tag",
+          "en": "Average daily consumption"
+        },
+        "price": {
+          "de": "Preis pro Stk.",
+          "en": "Price per piece"
+        }
+      }
+    },
+    "save": {
+      "de": "Sichern",
+      "en": "Save"
+    }
+  },
+  "overview": {
+    "streak": {
+      "unit": {
+        "de": "Tage",
+        "en": "days"
+      },
+      "text": {
+        "de": "Streak (Serie in Tagen)",
+        "en": "Streak (series in days)"
+      }
+    },
+    "savings": {
+      "de": "seit dem <span id='savings-date'></span> gespart",
+      "en": "saved since <span id='savings-date'></span>"
+    },
+    "level": {
+      "de": "Gesundheitslevel",
+      "en": "Health level",
+      "link": {
+        "de": "Was bedeutet das?",
+        "en": "What does it mean?"
+      }
+    }
+  },
+  "footer": {
+    "realized": {
+      "de": "realisiert mit",
+      "en": "realized with"
+    }
+  }
+}

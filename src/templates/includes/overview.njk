@@ -1,10 +1,20 @@
 <table>
 	<tr>
-		<th>{% include "includes/diamond.svg" %}</th>
-		<td id="streak"></td>
+		<th>{% include "includes/streak.svg" %}</th>
+		<td><strong><span id="streak"></span> {{ i18n.overview.streak.unit[page.lang] }}</strong><br>{{ i18n.overview.streak.text[page.lang] }}</td>
 	</tr>
 	<tr>
 		<th>{% include "includes/savings.svg" %}</th>
-		<td id="credits"></td>
+		<td>
+			<strong><span id='savings-amount'></span></strong><br>
+			{{ i18n.overview.savings[page.lang] | safe }}
+		</td>
+	</tr>
+	<tr>
+		<th>{% include "includes/level.svg" %}</th>
+		<td>
+			<strong>{{ i18n.overview.level[page.lang] }} <span id='level'></span>/9</strong><br>
+			<a href="#health-level">{{ i18n.overview.level.link[page.lang] }}</a>
+		</td>
 	</tr>
 </table>

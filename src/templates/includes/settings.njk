@@ -1,15 +1,15 @@
-<h2>Meine Einstellungen</h2>
+<h2>{{ i18n.settings.title[page.lang] }}</h2>
 
-<aside>Deine persönlichen Einstellungen werden <abbr title="Local Storage">lokal in deinem Browser</abbr> gespeichert.</aside>
+<aside>{{ i18n.settings.note[page.lang] | safe }}</aside>
 
 <form action="/" method="post" id="form-settings">
 
-<h3>📍 Standort</h3>
+<h3>📍 {{ i18n.settings.sections.location.subtitle[page.lang] }}</h3>
 		<div class="form-group two-cols">
 			<div class="label-input-group">
-				<label for="country">Land</label>
+				<label for="country">{{ i18n.settings.sections.location.country[page.lang] }}</label>
 				<select name="country" id="country">
-					<option value="">Bitte wählen</option>
+					<option value="">{{ i18n.settings.sections.location.choose[page.lang] }}</option>
 					{% for country in countries %}
 						<option value="{{ country.iso2 }}">{{ country.name }}</option>
 					{% endfor %} 
@@ -18,36 +18,36 @@
 		</div>
 		<div class="form-group three-cols">
 			<div class="label-input-group">
-				<label for="currency">Währung</label>
+				<label for="currency">{{ i18n.settings.sections.location.currency[page.lang] }}</label>
 				<input type="text" name="currency" id="currency" />
 			</div>
 			<div class="label-input-group">
-				<label for="separator">Tausender-Trennzeichen</label>
+				<label for="separator">{{ i18n.settings.sections.location.separator[page.lang] }}</label>
 				<input type="text" name="separator" id="separator" />
 			</div>
 			<div class="label-input-group">
-				<label for="decimal">Dezimalzeichen</label>
+				<label for="decimal">{{ i18n.settings.sections.location.decimal[page.lang] }}</label>
 				<input type="text" name="decimal" id="decimal"/>
 			</div>
 		</div>
 	</div>
 
-	<h3>🚬 Konsum und Kosten</h3>
+	<h3>🚬 {{ i18n.settings.sections.consumption.subtitle[page.lang] }}</h3>
 	<div class="form-group three-cols">
 		<div class="label-input-group">
-			<label for="start-date">Wann hast du die letzte angezündet?</label>
+			<label for="start-date">{{ i18n.settings.sections.consumption.start[page.lang] }}</label>
 			<input type="date" name="start-date" id="start-date" />
 		</div>
 		<div class="label-input-group">
-			<label for="ammount-smoked">Durchschnittlicher Konsum pro Tag</label>
-			<input type="number" name="ammount-smoked" id="ammount-smoked" />
+			<label for="amount-smoked">{{ i18n.settings.sections.consumption.amount[page.lang] }}</label>
+			<input type="number" name="amount-smoked" id="amount-smoked" />
 		</div>
 		<div class="label-input-group">
-			<label for="price-per-piece">Preis pro Stk.</label>
+			<label for="price-per-piece">{{ i18n.settings.sections.consumption.price[page.lang] }}</label>
 			<input type="number" name="price-per-piece" id="price-per-piece" step="0.01" />
 		</div>
 	</div>
 	
-	<button id="submit-settings" type="submit">Sichern</button>
+	<button id="submit-settings" type="submit"><span class="btn-icon">{% include "includes/save.svg" %}</span> {{ i18n.settings.save[page.lang] }}</button>
 </form>
 

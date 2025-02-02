@@ -28,10 +28,6 @@
 
 /* Layout */
 
-html {
-  font-size: 1rem;
-}
-
 body {
   background: var(--color-bg)
     radial-gradient(
@@ -39,9 +35,9 @@ body {
       rgba(255, 255, 255, 0.1) 0%,
       transparent 70%
     );
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
-  font-size: 1em;
   min-height: 100vh;
 }
 
@@ -63,28 +59,34 @@ main {
 }
 
 section {
-  margin-top: 5rem;
-  justify-content: center;
+  margin: 2.5rem 0;
 }
 
 section#overview {
   margin-top: 1rem;
-}
-
-.article-top,
-.article-bottom {
-  display: flex;
   justify-content: center;
 }
 
-.article-top button,
-.article-bottom button {
-  margin: 0;
+section#settings {
+  display: none;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
-#settings {
-  display: none;
-  margin-top: 1rem;
+section#content-wrapper {
+  margin-top: 7.5rem;
+}
+
+.nav-top,
+.nav-bottom {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 2.5rem;
+}
+
+.nav-top button,
+.nav-bottom button {
+  margin: 0;
 }
 
 h1 {
@@ -94,6 +96,16 @@ h1 {
 h1,
 h2 {
   margin-top: 0;
+}
+
+h2#subtitle-level {
+  align-items: center;
+  display: flex;
+  margin-left: -0.25em;
+}
+
+h2#subtitle-level svg {
+  margin-right: 0.25em;
 }
 
 h3 {
@@ -107,11 +119,19 @@ button {
   margin: 2rem 0 0 0;
 }
 
+ol {
+  padding-left: 1.5em;
+}
+
+ol li {
+  padding-left: 0.5em;
+}
+
 /* Table */
 
 table {
   background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-accent);
+  border: 2px solid var(--color-accent);
   border-radius: var(--border-radius);
   border-collapse: collapse;
   box-shadow: var(--box-shadow);
@@ -125,7 +145,7 @@ table tr:nth-child(2n) {
 }
 
 table tr:not(:last-child) {
-  border-bottom: 1px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
 }
 
 table tr:not(:first-child) th,
@@ -137,6 +157,8 @@ table tr:not(:last-child) th,
 table tr:not(:last-child) td {
   padding-bottom: 1rem;
 }
+
+/* Media */
 
 .logo {
   display: flex;
@@ -159,15 +181,6 @@ svg {
   vertical-align: middle;
 }
 
-.label {
-  background-color: var(--color-secondary);
-  border-radius: var(--border-radius);
-  color: var(--color-bg);
-  font-size: 0.5em;
-  vertical-align: text-top;
-  padding: 0 0.25em;
-}
-
 .btn-icon svg {
   fill: var(--color-bg);
   height: 1.5em;
@@ -184,39 +197,7 @@ aside {
   width: 100%;
 }
 
-/* Overlay */
-/* 
-.overlay {
-	align-items: center;
-	display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1000;
-}
-
-.overlay-content {
-	background-color: var(--color-bg-secondary);
-	border-radius: 1rem;
-	box-shadow: var(--box-shadow);
-	position: relative;
-	margin: 1rem auto;
-	padding: 2rem;
-	width: 40rem;
-	max-width: 100%;
-}
-
-.close-btn {
-	position: absolute;
-	top: 10px;
-	right: 20px;
-	font-size: 24px;
-	cursor: pointer;
-} */
-
-/* Form */
+/* Interactive */
 
 .overlay-content article {
   display: grid;
@@ -287,4 +268,22 @@ button,
 input[type="submit"] {
   cursor: pointer;
   padding: 1rem 1.25rem;
+}
+
+.level-label {
+  background-color: var(--color-shadow);
+  border-radius: var(--border-radius);
+  color: var(--color-bg);
+  font-weight: bold;
+  margin-right: 0.25em;
+  padding: 0 0.25em;
+}
+
+.level-label.achieved {
+  background-color: var(--color-accent);
+  /* color: var(--color-text); */
+}
+
+a {
+  font-weight: normal;
 }
