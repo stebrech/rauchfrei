@@ -73,6 +73,10 @@
   },
   "overview": {
     "streak": {
+      "icon": {
+        "de": "Stern Symbol",
+        "en": "Star symbol"
+      },
       "unit": {
         "de": "Tage",
         "en": "days"
@@ -83,12 +87,24 @@
       }
     },
     "savings": {
+      "icon": {
+        "de": "Sparschwein Symbol",
+        "en": "Piggy bank symbol"
+      },
+      "text": {
       "de": "seit dem <span id='savings-date'></span> gespart",
       "en": "saved since <span id='savings-date'></span>"
+      }
     },
     "level": {
+      "icon": {
+        "de": "Herz Symbol",
+        "en": "Heart symbol"
+      },
+      "text": {
       "de": "Gesundheitslevel",
-      "en": "Health level",
+        "en": "Health level"
+      },
       "link": {
         "de": "Was bedeutet das?",
         "en": "What does it mean?"

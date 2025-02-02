@@ -1,5 +1,6 @@
 <!-- Carbon Icons | piggy-bank-slot -->
-<svg width="46" height="46" fill="currentColor" viewBox="0 0 24 24"
+<svg role="img" aria-labelledby="savings-icon-text" width="46" height="46" fill="currentColor"
+	viewBox="0 0 24 24"
 	xmlns="http://www.w3.org/2000/svg">
 	<path d="M15 8.25H9.75v1.5H15v-1.5Z"></path>
 	<path

@@ -1,19 +1,19 @@
 <table>
 	<tr>
-		<th>{% include "includes/streak.svg" %}</th>
+		<th>{% include "includes/streak.svg" %}<span id="streak-icon-text" class="screen-reader-text">{{ i18n.overview.streak.icon[page.lang] }}</span></th>
 		<td><strong><span id="streak"></span> {{ i18n.overview.streak.unit[page.lang] }}</strong><br>{{ i18n.overview.streak.text[page.lang] }}</td>
 	</tr>
 	<tr>
-		<th>{% include "includes/savings.svg" %}</th>
+		<th>{% include "includes/savings.svg" %}<span id="savings-icon-text" class="screen-reader-text">{{ i18n.overview.savings.icon[page.lang] }}</span></th>
 		<td>
 			<strong><span id='savings-amount'></span></strong><br>
-			{{ i18n.overview.savings[page.lang] | safe }}
+			{{ i18n.overview.savings.text[page.lang] | safe }}
 		</td>
 	</tr>
 	<tr>
-		<th>{% include "includes/level.svg" %}</th>
+		<th>{% include "includes/level.svg" %}<span id="level-icon-text" class="screen-reader-text">{{ i18n.overview.level.icon[page.lang] }}</span></th>
 		<td>
-			<strong>{{ i18n.overview.level[page.lang] }} <span id='level'></span>/9</strong><br>
+			<strong>{{ i18n.overview.level.text[page.lang] }} <span id='level'></span>/9</strong><br>
 			<a href="#health-level">{{ i18n.overview.level.link[page.lang] }}</a>
 		</td>
 	</tr>
