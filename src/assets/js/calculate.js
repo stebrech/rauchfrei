@@ -108,6 +108,7 @@ form.addEventListener("submit", (event) => {
   calculateLevel();
 
   document.getElementById("overview").style.display = "flex";
+  document.getElementById("content-wrapper").style.display = "flex";
 });
 
 // Fetch the json data
