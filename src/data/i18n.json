@@ -1,4 +1,8 @@
 {
+  "url": {
+    "de": "https://rauch-frei.netlify.app",
+    "en": "https://rauch-frei.netlify.app/en"
+  },
   "title": {
     "de": "Rauchfrei Tracker",
     "en": "Smoke Free Tracker"

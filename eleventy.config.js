@@ -4,6 +4,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "src/assets/js": "/js",
     "src/assets/css": "/css",
+    "src/assets/img": "/img",
     "src/assets/favicon": "/",
     "src/data": "/data",
   });
