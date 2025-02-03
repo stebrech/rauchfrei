@@ -1,7 +1,6 @@
 ---
-layout: "layouts/base.njk"
+permalink: "/"
 ---
-
 <h2 id="health-level">{% include "includes/level.svg" %} Gesundheitslevel</h2>
 
 1. <span id="level1" class="level-label">Nach 12 Stunden</span> Alle Organe werden wieder mit mehr Sauerstoff versorgt.
