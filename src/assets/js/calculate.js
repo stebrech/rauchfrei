@@ -76,8 +76,9 @@ if (settingsSaved !== "") {
 } else {
   // Initially show settings
   document.getElementById("settings").style.display = "block";
-  // Initially hide the overview
+  // Initially hide the overview and the content wrapper
   document.getElementById("overview").style.display = "none";
+  document.getElementById("content-wrapper").style.display = "none";
 }
 
 // Fill in the values saved in the local storage
