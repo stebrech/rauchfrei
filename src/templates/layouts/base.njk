@@ -22,32 +22,35 @@
 
 	</head>
 	<body>
-		<header>
-			<div class="logo">{% include "includes/smoke-free.svg" %}</div>
-			<h1>{{ i18n.title[page.lang] }}</h1>
-		</header>
-
 		<main>
 			<article>
-				<nav class="nav-top">
-					<span class="lang-icon">{% include "includes/lang.svg" %}</span> {{ i18n.language.switch[page.lang] }} 
-		
-					{% for link in page.url | locale_links %}
-					{%- if not loop.first %},{% endif %}
-					<a href="{{link.url}}" lang="{{link.lang}}" hreflang="{{link.lang}}">{{link.label}}</a>
-					{% endfor %}
-				</nav>
 
-				<section id="settings">
-					{% include "includes/settings.njk" %}
-				</section>
-				<section id="overview">
-					{% include "includes/overview.njk" %}
-				</section>
+				<div class="above-the-fold">
+					<header>
+						<div class="logo">{% include "includes/smoke-free.svg" %}</div>
+						<h1>{{ i18n.title[page.lang] }}</h1>
+					</header>
 
-				<nav class="nav-bottom">
-					<button id="settings-btn" aria-expanded="true"><span class="btn-icon">{% include "includes/settings.svg" %}</span> {{ i18n.settings.button[page.lang] }}</button>
-				</nav>
+					<nav class="nav-top">
+						<span class="lang-icon">{% include "includes/lang.svg" %}</span> {{ i18n.language.switch[page.lang] }} 
+						{% for link in page.url | locale_links %}
+						{%- if not loop.first %},{% endif %}
+						<a href="{{link.url}}" lang="{{link.lang}}" hreflang="{{link.lang}}">{{link.label}}</a>
+						{% endfor %}
+					</nav>
+
+					<section id="settings">
+						{% include "includes/settings.njk" %}
+					</section>
+
+					<section id="overview">
+						{% include "includes/overview.njk" %}
+					</section>
+
+					<nav class="nav-bottom">
+						<button id="settings-btn" aria-expanded="true"><span class="btn-icon">{% include "includes/settings.svg" %}</span> {{ i18n.settings.button[page.lang] }}</button>
+					</nav>
+				</div>
 
 				<section id="content-wrapper">
 					{{ content | safe }}

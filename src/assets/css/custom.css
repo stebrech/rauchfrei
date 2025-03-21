@@ -41,8 +41,12 @@ body {
   min-height: 100vh;
 }
 
-header {
-  padding: 3rem 1rem 0;
+.above-the-fold {
+  min-height: 100vh;
+}
+
+article header {
+  padding: 1rem;
 }
 
 footer {
@@ -63,7 +67,7 @@ section {
 }
 
 section#overview {
-  margin-top: 1rem;
+  margin-top: 0;
   justify-content: center;
 }
 
