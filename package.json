@@ -17,6 +17,6 @@
 	"author": "Stefan Brechbühl",
 	"license": "MIT",
 	"dependencies": {
-		"@11ty/eleventy": "github:11ty/eleventy"
+		"@11ty/eleventy": "^3.1.5"
 	}
 }
